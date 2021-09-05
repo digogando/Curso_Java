@@ -14,7 +14,7 @@ public class Console {
 		System.out.printf("Megasena: %d %d %d %d %d %d", 1, 2, 3, 4, 5, 6);
 		System.out.printf("Salario: %.1f", 1234.56);
 		
-		Scanner entrada = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in); //abrindo o scanner
 		
 		System.out.print("Digite o seu nome: ");
 		String nome = entrada.nextLine();
@@ -26,5 +26,7 @@ public class Console {
 		int idade = entrada.nextInt();
 		
 		System.out.printf("%s %s tem %d anos de idade.", nome, sobrenome, idade);
+	
+		entrada.close(); //fechando o scanner
 	}
 }
