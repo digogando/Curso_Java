@@ -2,26 +2,31 @@ package oo.heranca.desafio;
 
 public class Carro {
 
-	/*String Chevette;
-	String Uno;
-	String Voyage;
-	String Gol;*/
+	final int VELOCIDADE_MAX;
+	int velocidadeAtual;
+	int delta = 5;
 	
-	int velocAtual;
-	
-	void pisaAcelerador(){
-		velocAtual += 5;
+	protected Carro(int velocidadeMaxima){
+		VELOCIDADE_MAX = velocidadeMaxima;
 	}
 	
-	void pisaFreio(){
-		if(velocAtual >= 5){
-			velocAtual -= 5;
+	public void pisaAcelerador(){
+		if(velocidadeAtual + delta > VELOCIDADE_MAX){
+			velocidadeAtual = VELOCIDADE_MAX;
+		} else {
+			velocidadeAtual += delta;
+		}
+    }
+	
+	public void pisaFreio(){
+		if(velocidadeAtual >= 5){
+			velocidadeAtual -= 5;
 		} else{
-			velocAtual = 0;
+			velocidadeAtual = 0;
 		}
 	}
 	
 	public String toString(){
-		return "Velocidade atual é " + velocAtual;
+		return "Velocidade atual é " + velocidadeAtual;
 	}
 }
